@@ -1,0 +1,28 @@
+﻿using System;
+
+namespace recursion___practice
+{
+    class Program
+    {
+        static void Main2(string[] args)
+        {
+            Console.Write("\n\n Recursion : Sum of first n natural numbers :\n");
+            Console.Write("--------------------------------------------------\n");
+            Console.Write(" How many numbers to sum : ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.Write(" The sum of first {0} natural numbers is : {1}\n\n", n, SumOfTen(1, n));
+        }
+
+        static int SumOfTen(int min, int max)
+        {
+            return CalcuSum(min, max);
+        }
+
+        static int CalcuSum(int min, int val)
+        {
+            if (val == min)
+                return val;
+            return val + CalcuSum(min, val - 1);
+        }
+    }
+}
